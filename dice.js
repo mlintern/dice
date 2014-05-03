@@ -113,7 +113,6 @@ function go() {
 		if ( !$('.Dice[data-die='+curr_die.id+']').parent().hasClass('lock') ) {
 		curr_die.startRoll();		
 		curr_die.stopRoll();
-		//setTimeout(function(){curr_die.stopRoll()},1000)
 		}
 	}
 	$(".RollHistory").text($(".RollHistory").text() + ": ");
@@ -121,7 +120,6 @@ function go() {
 
 function clearHistory() {
 	$(".RollHistory").html("&nbsp;");
-	$(".RollHistory").text($(".RollHistory").text() + ": ");
 }
 
 function customChanged() {
