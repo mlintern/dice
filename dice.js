@@ -90,6 +90,7 @@ function moreDice(num) {
 		});
 		dice.push(name);
 		die_count++;
+		$('.dice-count').html(die_count);
 	}
 }
 
@@ -98,11 +99,11 @@ function lessDice(num) {
 		dice.pop();
 		$('.DiceBox').last().remove();
 		die_count--;
+		$('.dice-count').html(die_count);
 	}
 }
 
 function go() {
-	$(".RollHistory").text($(".RollHistory").text() + "- ");
 	for ( i=0; i<die_count; i++ ) {
 		curr_die = dice[i];
 		curr_die.diceTimer = null;
@@ -115,11 +116,12 @@ function go() {
 		//setTimeout(function(){curr_die.stopRoll()},1000)
 		}
 	}
+	$(".RollHistory").text($(".RollHistory").text() + ": ");
 }
 
 function clearHistory() {
 	$(".RollHistory").html("&nbsp;");
-	$(".RollHistory").text($(".RollHistory").text() + "- ");
+	$(".RollHistory").text($(".RollHistory").text() + ": ");
 }
 
 function customChanged() {

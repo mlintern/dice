@@ -18,6 +18,11 @@ em {
   font-weight: bold;
 }
 
+.dice-count {
+  font-size: 16px;
+  margin: 5px;
+}
+
 .btn-roll {
   position: absolute;
   z-index: 10;
