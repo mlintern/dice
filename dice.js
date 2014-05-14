@@ -73,6 +73,7 @@ function setup() {
 	orientationChanged();
 	customChanged();
 	moreDice(1);
+	go()
 }
 
 function moreDice(num) {
