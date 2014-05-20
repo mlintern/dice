@@ -72,7 +72,7 @@ die.prototype.stopRolling = function () {
 function setup() {
 	orientationChanged();
 	customChanged();
-	moreDice(1);
+	moreDice(2);
 	go()
 }
 
