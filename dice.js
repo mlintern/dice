@@ -124,7 +124,6 @@ function clearHistory() {
 }
 
 function customChanged() {
-	console.log('here');
 	option = $("input:radio[name=DiceType]:checked").val();
 	switch (option) {
 		case 'dice':
