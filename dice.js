@@ -19,7 +19,8 @@ die.prototype.roll = function () {
 	if (this.diceTimer) {
 		clearTimeout(this.diceTimer);
 	}
-	var ch = customLetters.charAt(Math.random() * customLetters.length);
+	var pick = Math.floor(Math.random() * customLetters.length);
+	var ch = customLetters[pick];
 	if (option == 'dice') {
 		img = '<span class="die die'+ch+'"></span>';
 		$(".Dice[data-die="+this.id+"]").html(img);
@@ -128,22 +129,30 @@ function customChanged() {
 	switch (option) {
 		case 'dice':
 			customLetters = "123456";
+			customLetters = customLetters.split("");
 			$('.hint').text('6 Sided Dice Value');
 			break;
 		case 'num':
 			customLetters = "0123456789";
+			customLetters = customLetters.split("");
 			$('.hint').text('Numbers 0 - 9');
 			break;
 		case 'alpha':
 			customLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+			customLetters = customLetters.split("");
 			$('.hint').text('Letters A - Z');
 			break;
 		case 'custom':
 			customLetters = $(".CustomLetters").val();
 			customLetters = customLetters.replace(/\s/g, "");
 			customLetters = customLetters.toUpperCase();
-			$(".CustomLetters").value = customLetters;
+			$(".CustomLetters").val(customLetters);
 			$('.hint').text("Custom '"+customLetters+"'");
+			if ( $('.CommaDeliminated').is(':checked') ) {
+				customLetters = customLetters.split(",");
+			}else{
+				customLetters = customLetters.split("");
+			}
 			break;
 	} 
 }
