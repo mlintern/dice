@@ -30,7 +30,7 @@ em {
 }
 
 .text-center{
-text-align: center;
+  text-align: center;
 }
 
 .settings-close {
@@ -109,31 +109,31 @@ font-size: 40px;
 }
 
 .die{
-position: absolute;
-width: 200px;
-height: 200px;
-display: block;
-top: -10px;
-left: 0px;
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  display: block;
+  top: -10px;
+  left: 0px;
 }
 
 .die1{
-background: url('6dice.png') 0 0 transparent no-repeat;
+  background: url('../img/6dice.png') 0 0 transparent no-repeat;
 }
 .die2{
-background: url('6dice.png') -200px 0 transparent no-repeat;
+  background: url('../img/6dice.png') -200px 0 transparent no-repeat;
 }
 .die3{
-background: url('6dice.png') -400px 0 transparent no-repeat;
+  background: url('../img/6dice.png') -400px 0 transparent no-repeat;
 }
 .die4{
-background: url('6dice.png') 0 -200px transparent no-repeat;
+  background: url('../img/6dice.png') 0 -200px transparent no-repeat;
 }
 .die5{
-background: url('6dice.png') -200px -200px transparent no-repeat;
+  background: url('../img/6dice.png') -200px -200px transparent no-repeat;
 }
 .die6{
-background: url('6dice.png') -400px -200px transparent no-repeat;
+  background: url('../img/6dice.png') -400px -200px transparent no-repeat;
 }
 
 .modal-content{

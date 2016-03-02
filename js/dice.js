@@ -44,7 +44,7 @@ die.prototype.roll = function () {
 			return;
 		}
 		break;
-	}  
+	}
 	this.diceTimer = setTimeout(function(){self.roll()}, this.diceSpeed);
 }
 
@@ -63,7 +63,7 @@ die.prototype.stopRoll = function () {
 die.prototype.stopRolling = function () {
 	if (this.diceTimer) {
 		clearTimeout(this.diceTimer);
-	}      
+	}
 	this.setDiceSpeed(300);
 	this.speedMode = SPEED.HOLD;
 	this.diceTimer = null;
@@ -154,7 +154,7 @@ function customChanged() {
 				customLetters = customLetters.split("");
 			}
 			break;
-	} 
+	}
 }
 
 function orientationChanged() {
@@ -163,7 +163,7 @@ function orientationChanged() {
 	}
 	else {
 		landscape = window.innerWidth > window.innerHeight;
-	}  
+	}
 	setTimeout(function() {window.scrollTo(0,1)}, 1);
 }
 
