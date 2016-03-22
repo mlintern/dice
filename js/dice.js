@@ -48,6 +48,11 @@ die.prototype.roll = function () {
 	this.diceTimer = setTimeout(function(){self.roll()}, this.diceSpeed);
 }
 
+die.prototype.fullRoll = function () {
+	this.startRoll();
+	this.stopRoll();
+}
+
 die.prototype.startRoll = function () {
 	this.roll();
 }
@@ -79,7 +84,7 @@ function setup() {
 
 function moreDice(num) {
 	for (i=0;i<num;i++) {
-		var name = new die(die_count);
+		var d = new die(die_count);
 		$('.Content').append('<div class="DiceBox"><div class="Dice" data-die="'+die_count+'">&nbsp;</div></div>');
 		$('.Dice[data-die='+die_count+']').parent().on('click',function(){
 			if ( $(this).hasClass('lock') ) {
@@ -90,7 +95,8 @@ function moreDice(num) {
 				$(this).addClass('lock');
 			}
 		});
-		dice.push(name);
+		d.fullRoll();
+		dice.push(d);
 		die_count++;
 		$('.dice-count').html(die_count);
 	}
@@ -113,8 +119,7 @@ function go() {
 		curr_die.speedMode = SPEED.ACC;
 		
 		if ( !$('.Dice[data-die='+curr_die.id+']').parent().hasClass('lock') ) {
-		curr_die.startRoll();		
-		curr_die.stopRoll();
+		curr_die.fullRoll();
 		}
 	}
 	$(".RollHistory").text($(".RollHistory").text() + ": ");
